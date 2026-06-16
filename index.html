@@ -47,7 +47,7 @@
           <div class="form-field">
             <div class="input-wrap">
               <input type="email" placeholder="Email" id="login-email">
-              <button class="eye-btn" style="font-size:13px">✉</button>
+              <button class="eye-btn" style="font-size:13px" type="button">✉</button>
             </div>
           </div>
           <div class="form-field">
@@ -56,13 +56,19 @@
               <button class="eye-btn" onclick="togglePw('login-pw',this)">👁</button>
             </div>
           </div>
-          <div class="forget-link">Forgot Password?</div>
+          <div class="forget-link" onclick="alert('Password reset sent to your email')">Forgot Password?</div>
           <button class="btn-primary" onclick="doLogin()">Sign In</button>
           <button class="btn-outline" onclick="showScreen('signup')">Sign Up</button>
           <div class="auth-divider">or</div>
           <div class="social-row">
-            <button class="social-btn"><span style="font-size:18px">G</span><span style="color:#4285F4;font-weight:700">o</span><span style="color:#EA4335;font-weight:700">o</span><span style="color:#FBBC05;font-weight:700">g</span><span style="color:#34A853;font-weight:700">l</span><span style="color:#4285F4;font-weight:700">e</span></button>
-            <button class="social-btn">🔵 Facebook</button>
+            <button class="social-btn" onclick="loginWithGoogle()" style="gap:8px">
+              <span style="display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:linear-gradient(135deg, #4285F4 0%, #EA4335 25%, #FBBC05 50%, #34A853 75%, #4285F4 100%);border-radius:4px;color:white;font-weight:bold;font-size:14px">G</span>
+              <span style="font-weight:700">Google</span>
+            </button>
+            <button class="social-btn" onclick="loginWithFacebook()" style="gap:8px">
+              <span style="display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:#1877F2;border-radius:4px;color:white;font-weight:bold;font-size:16px">f</span>
+              <span style="font-weight:700">facebook</span>
+            </button>
           </div>
         </div>
       </div>
@@ -137,7 +143,7 @@
               <span><span class="legend-dot" style="background:#f97316"></span>Reviewing</span>
               <span><span class="legend-dot" style="background:#15803d"></span>Resolved</span>
             </div>
-            <button class="map-expand">⊕</button>
+            <button class="map-expand" onclick="alert('Map expanded')">⊕</button>
           </div>
           <div class="home-stats">
             <div class="stat-card"><div class="stat-num pending">1</div><div class="stat-label">Pending</div></div>
@@ -223,7 +229,7 @@
           </div>
           <div class="recent-header">
             <span>Recent Submissions</span>
-            <button>Sort by</button>
+            <button onclick="alert('Sort options: Newest, Oldest, Priority')">Sort by</button>
           </div>
           <div class="reports-list">
             <div class="rpt-card">
@@ -367,7 +373,7 @@
               <div class="notif-sub">Water Pollution · Purok 3</div>
               <div class="notif-time">2 hours ago</div>
             </div>
-            <div class="notif-right"><span class="badge new">New</span><button class="notif-more">⋯</button></div>
+            <div class="notif-right"><span class="badge new">New</span><button class="notif-more" onclick="alert('Options: Delete, Mute')">⋯</button></div>
           </div>
           <div class="notif-item" data-status="new">
             <div class="notif-avatar" style="background:#8b7355">BR</div>
@@ -376,7 +382,7 @@
               <div class="notif-sub">Land Pollution · Purok 1</div>
               <div class="notif-time">5 hours ago</div>
             </div>
-            <div class="notif-right"><span class="badge new">New</span><button class="notif-more">⋯</button></div>
+            <div class="notif-right"><span class="badge new">New</span><button class="notif-more" onclick="alert('Options: Delete, Mute')">⋯</button></div>
           </div>
           <div class="notif-item" data-status="new">
             <div class="notif-avatar" style="background:#6b8e6b">CC</div>
@@ -394,7 +400,7 @@
               <div class="notif-sub">Air Pollution · Purok 2</div>
               <div class="notif-time">2 days ago</div>
             </div>
-            <div class="notif-right"><span class="badge progress">Progress</span><button class="notif-more">⋯</button></div>
+            <div class="notif-right"><span class="badge progress">Progress</span><button class="notif-more" onclick="alert('Options: Delete, Mute')">⋯</button></div>
           </div>
           <div class="notif-item" data-status="pending">
             <div class="notif-avatar" style="background:#7a6b8e">JR</div>
@@ -403,7 +409,7 @@
               <div class="notif-sub">Air Pollution · Purok 4</div>
               <div class="notif-time">3 days ago</div>
             </div>
-            <div class="notif-right"><span class="badge pending">Pending</span><button class="notif-more">⋯</button></div>
+            <div class="notif-right"><span class="badge pending">Pending</span><button class="notif-more" onclick="alert('Options: Delete, Mute')">⋯</button></div>
           </div>
           <div class="notif-item" data-status="resolved">
             <div class="notif-avatar" style="background:#6b7a5a">AL</div>
@@ -412,7 +418,7 @@
               <div class="notif-sub">Land Pollution · Purok 1</div>
               <div class="notif-time">4 days ago</div>
             </div>
-            <div class="notif-right"><span class="badge resolved">Resolved</span><button class="notif-more">⋯</button></div>
+            <div class="notif-right"><span class="badge resolved">Resolved</span><button class="notif-more" onclick="alert('Options: Delete, Mute')">⋯</button></div>
           </div>
         </div>
         <nav class="bottom-nav">
@@ -439,7 +445,7 @@
             <h2>My Profile</h2>
             <div class="profile-avatar-wrap">
               <div class="profile-avatar">👤</div>
-              <div class="edit-badge">Edit</div>
+              <div class="edit-badge" onclick="alert('Edit profile feature coming soon')">Edit</div>
             </div>
             <div class="profile-name">Jake Montecillo</div>
             <div class="profile-loc">📍 Cogon, Bogo City Cebu, Purok 1</div>
@@ -597,6 +603,16 @@ function filterNotif(status, btn) {
     if(status === 'all') { item.style.display = 'flex'; return; }
     item.style.display = item.dataset.status === status ? 'flex' : 'none';
   });
+}
+
+function loginWithGoogle() {
+  alert('🔐 Google Login - Redirecting to Google OAuth...');
+  showScreen('home');
+}
+
+function loginWithFacebook() {
+  alert('🔐 Facebook Login - Redirecting to Facebook OAuth...');
+  showScreen('home');
 }
 
 // ── DRAG TO RESIZE LOGIC ──
